@@ -1,0 +1,12 @@
+diff -up cloudsql-proxy-1.11/cmd/cloud_sql_proxy/proxy_test.go.fix_errorf cloudsql-proxy-1.11/cmd/cloud_sql_proxy/proxy_test.go
+--- cloudsql-proxy-1.11/cmd/cloud_sql_proxy/proxy_test.go.fix_errorf	2017-09-29 23:28:04.000000000 +0200
++++ cloudsql-proxy-1.11/cmd/cloud_sql_proxy/proxy_test.go	2018-04-22 15:11:25.846940954 +0200
+@@ -139,7 +139,7 @@ func TestParseInstanceConfig(t *testing.
+ 		got, err := parseInstanceConfig(v.dir, v.instance, mockClient)
+ 		if v.wantErr {
+ 			if err == nil {
+-				t.Errorf("parseInstanceConfig(%s, %s) = %+v, wanted error", got)
++				t.Errorf("parseInstanceConfig(%s, %s) = %+v, wanted error", v.dir, v.instance, got)
+ 			}
+ 			continue
+ 		} else if err != nil {
